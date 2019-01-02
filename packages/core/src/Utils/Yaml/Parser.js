@@ -46,7 +46,7 @@ export function configParser(obj: any, dirname: string, type: any = {}, cache: {
 
                     if (!cache[ moduleName ]) {
                         // eslint-disable-next-line no-param-reassign
-                        cache[ moduleName ] = globby.sync(`${ Registry.getRepository('App').get('cwd')  }/node_modules/**/**/${ moduleName }/`, {
+                        cache[ moduleName ] = globby.sync(`${ process.cwd() }/node_modules/**/**/${ moduleName }/`, {
                             nodir: false
                         })[ 0 ];
                     }
